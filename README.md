@@ -23,7 +23,8 @@ You can run the application 'out of the box' with a local IRI node, or you can t
 
 4) Set your personal spam message and tag (recommended).
 
-5) Set the search depth for 'transactions to approve', default SPAM_DEPTH=5.
+5) Set the search depth for 'transactions to approve', default SPAM_DEPTH_MIN = 3, SPAM_DEPTH_MAX = 12
+   The spammer will calculate a random depth between and including SPAM_DEPTH_MIN to SPAM_DEPTH_MAX for each spam.
 
 You find those parameters declarations in the top section of repeater.js.
 
