@@ -32,10 +32,10 @@ You find those parameters declarations in the top section of repeater.js.
 
 node spammer.js
 
-node spammer.js 5665 (set the milestone index from botbox)
+node spammer.js 5665 (set the milestone index from botbox, 5665 is just an example)
 
 ./spammer.sh        (make sure execution permission flag (`chmod +x ./spammer.sh`) is set!)
 
-./spammer.sh 5665   (with botbox milestone index)
+./spammer.sh 5665   (with botbox milestone index, 5665 is just an example)
 
 The 'spammer.sh' is a wrapper around the basic command call. It restarts node automatically if an exception occurs and the repeater stopped working. This is likely to happen at some point, because the underlying iota javascript lib and the IOTA ledger are still works in progress.
