@@ -10,12 +10,13 @@ var SPAM_ON = true;         // SPAMER_ON = false:  If you don't want the spammer
                             // ^^^^^^^^^^^ One of the 2 options should be true, 
                             //             otherwise it aint doing nothing!
 var SPAM_MESSAGE = "SPAMSPAMSPAM";    // only A-Z and 9 allowed!
-var SPAM_TAG = "YOURNAME"   // only A-Z and 9 allowed!
-var SPAM_FREQUENCY = 10     // minimum spam interval in seconds.
-var SPAM_DEPTH_MIN = 3      // How deep to search for transactions to approve (minimum)
-var SPAM_DEPTH_MAX = 12     // How deep to search for transactions to approve (maximum)
-var IRI_PORT       = 14265  // Must match your port configuration for iri process
-var TESTNET = false;        // Set to true only if you are using testnet.
+var SPAM_TAG = "SPAMSPAMSPAM"   // only A-Z and 9 allowed!
+var SPAM_FREQUENCY = process.env.SPAM_FREQUENCY || 10     // minimum spam interval in seconds.
+var SPAM_DEPTH_MIN = process.env.SPAM_DEPTH_MIN || 3      // How deep to search for transactions to approve (minimum)
+var SPAM_DEPTH_MAX = process.env.SPAM_DEPTH_MAX || 12     // How deep to search for transactions to approve (maximum)
+var IRI_HOST       = process.env.IRI_HOST || 'http://localhost'
+var IRI_PORT       = process.env.IRI_PORT || 14265
+var TESTNET        = true;        // Set to true only if you are using testnet.
 // -------- end of configrable part ------
 
 // -------- javascript code --------------
@@ -38,7 +39,7 @@ var iri_is_synced = false;
 var wanted_milestone;
 
 var iota = new IOTA({
-    'host': 'http://localhost',
+    'host': IRI_HOST,
     'port': IRI_PORT 
 });
 
